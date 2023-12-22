@@ -30,7 +30,7 @@ class Review(models.Model):
 
         #owner=
     project = models.ForeignKey( 
-            Project, on_delete=models.CASCADE, null=True,blank=True )
+            Project, on_delete=models.CASCADE, null=True,blank=True)
     body = models.TextField(null=True, blank=True)
     Value = models.CharField(max_length=50 , choices=VOTE_TYPE)
     updated= models.DateTimeField(auto_now=True)
