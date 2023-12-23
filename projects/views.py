@@ -52,3 +52,11 @@ def updateProject(request,pk):
 
 
     return render(request, template, context)
+
+def deleteProject(request,pk):
+    project = Project.objects.get(id=pk)
+
+    if request.method == 'POST':
+        project.delete()
+        return redirect('projects')
+    return render(request, 'projects/delete.html', {'object':project})
